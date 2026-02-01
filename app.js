@@ -16,6 +16,10 @@ app.get("/about", (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+app.get("/test", (req, res) => {
+  res.send("SERVIDOR FUNCIONANDO");
+});
+
 app.listen(PORT, () => {
   console.log("Servidor funcionando en puerto " + PORT);
 });
