@@ -6,20 +6,21 @@ console.log("Contenido de public:", fs.readdirSync("public"));
 const app = express();
 
 // Servir archivos estáticos
-app.use(express.static(path.join(__dirname,"DevOps", "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Rutas GET
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public","index.html"));
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 app.get("/about", (req, res) => {
-  res.sendFile(path.join(__dirname, "public","about.html"));
+  res.sendFile(path.join(__dirname, "public/about.html"));
 });
 
-app.get("/about", (req, res) => {
-  res.redirect("/"); // Redirige a index.html
+app.get("/back", (req, res) => {
+  res.redirect("/");
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.get("/test", (req, res) => {
