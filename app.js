@@ -17,6 +17,10 @@ app.get("/about", (req, res) => {
   res.sendFile(path.join(__dirname, "public","about.html"));
 });
 
+app.get("/about", (req, res) => {
+  res.redirect("/"); // Redirige a index.html
+});
+
 const PORT = process.env.PORT || 3000;
 app.get("/test", (req, res) => {
   res.send("SERVIDOR FUNCIONANDO");
