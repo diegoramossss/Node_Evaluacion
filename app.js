@@ -10,11 +10,11 @@ app.use(express.static(path.join(__dirname,"DevOps", "public")));
 
 // Rutas GET
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
+  res.sendFile(path.join(__dirname, "public","index.html"));
 });
 
 app.get("/about", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/about.html"));
+  res.sendFile(path.join(__dirname, "public","about.html"));
 });
 
 const PORT = process.env.PORT || 3000;
