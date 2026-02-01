@@ -1,10 +1,12 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
+console.log("Contenido de public:", fs.readdirSync("public"));
 
 const app = express();
 
 // Servir archivos estáticos
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname,"DevOps", "public")));
 
 // Rutas GET
 app.get("/", (req, res) => {
